@@ -1,0 +1,16 @@
+{
+    "name": "NGPlus.Inventory",
+    "rootNamespace": "NGPlus.Inventory",
+    "references": [
+        "GUID:eac37a720697e544aa76111257c0a0d1"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
