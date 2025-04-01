@@ -1,0 +1,17 @@
+{
+    "name": "NGPlus.Character",
+    "rootNamespace": "NGPlus.Character",
+    "references": [
+        "GUID:9cc5a05c3b1a5514a816832e5780543b",
+        "GUID:75469ad4d38634e559750d17036d5f7c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
