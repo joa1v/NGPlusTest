@@ -1,0 +1,17 @@
+{
+    "name": "NGPlus.NPCs",
+    "rootNamespace": "NGPlus.NPCs",
+    "references": [
+        "GUID:a5bbc8ed403b89a4e84d2f84a0e8117e",
+        "GUID:abd737ccb5d798f49aab5fa9a6dec028"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

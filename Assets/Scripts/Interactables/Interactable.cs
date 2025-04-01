@@ -1,11 +1,16 @@
+using System;
 using UnityEngine;
 
 namespace NGPlus.Interactables
 {
     [RequireComponent(typeof(InteractableFeedback))]
+    [RequireComponent(typeof(Collider))]
     public abstract class Interactable : MonoBehaviour
     {
-        [SerializeField] private InteractableFeedback _feedback;
+        [SerializeField] protected InteractableFeedback _feedback;
+
+        public Action OnInteractorLeft { get; set; }
+
         private void OnTriggerEnter(Collider other)
         {
             if (other.TryGetComponent(out Interactor interactor))
@@ -21,6 +26,8 @@ namespace NGPlus.Interactables
             {
                 interactor.CurrentInteractable = null;
                 _feedback.Hide();
+
+                OnInteractorLeft?.Invoke();
             }
         }
 

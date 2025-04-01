@@ -9,7 +9,8 @@ namespace NGPlus.Interactables
 
         public void Interact(InputAction.CallbackContext context)
         {
-            CurrentInteractable?.Interact();
+            if (context.started)
+                CurrentInteractable?.Interact();
         }
     }
 }

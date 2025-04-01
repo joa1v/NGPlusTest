@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace NGPlus.Item
 {
-    public class Item : Interactable
+    public class ItemInteraction : Interactable
     {
         public override void Interact()
         {
