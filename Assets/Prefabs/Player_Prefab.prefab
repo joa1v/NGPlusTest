@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4873210130943446427}
   - component: {fileID: 4251225855895002852}
   - component: {fileID: 1813424640973204362}
+  - component: {fileID: 4046075678944780378}
   m_Layer: 0
   m_Name: Player_Prefab
   m_TagString: Untagged
@@ -124,7 +125,19 @@ MonoBehaviour:
     m_ActionId: 6c2ab1b8-8984-453a-af3d-a3c78ae1679a
     m_ActionName: 'Player/Attack[/Mouse/leftButton,/Keyboard/enter]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4046075678944780378}
+        m_TargetAssemblyTypeName: NGPlus.Interactables.Interactor, NGPlus.Interactables
+        m_MethodName: Interact
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 852140f2-7766-474d-8707-702459ba45f3
     m_ActionName: 'Player/Interact[/Keyboard/e]'
   - m_PersistentCalls:
@@ -258,6 +271,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 9055459159940904747}
   _movementParameter: speed
+--- !u!114 &4046075678944780378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8533157968073938211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e33fbb3d59a9e2143b63277267af1475, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4136424273638968964
 PrefabInstance:
   m_ObjectHideFlags: 0
