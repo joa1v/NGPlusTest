@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f26c74b3d027d6f429939e5954b22d5a, type: 3}
+  m_Name: NPCSpeaker_DialogueData
+  m_EditorClassIdentifier: 
+  _dialogueLines:
+  - Crystals hold ancient energies... but only those who listen can truly understand
+    them.
+  - Some say crystals can amplify one's spirit. Others just think they look pretty.
+  - Legends tell of a crystal so powerful, it could change fate itself. But who believes
+    in legends anymore?
+  - You ever just stare into a crystal and wonder if it's staring back?
+  - "Different crystals, different powers. But in the end, it\u2019s all just rocks,
+    isn\u2019t it?"

@@ -6,6 +6,7 @@ namespace NGPlus.Inventory
 {
     public class InventoryManager : Singleton<InventoryManager>
     {
+        [SerializeField] private int _maxItems = 6;
         private Dictionary<IInventoryItem, int> _items = new Dictionary<IInventoryItem, int>();
         public IReadOnlyDictionary<IInventoryItem, int> Items => _items;
 
@@ -15,12 +16,16 @@ namespace NGPlus.Inventory
             {
                 _items[item] = quantity + 1;
             }
-            else
+            else if (_items.Count < _maxItems)
             {
                 _items.Add(item, 1);
             }
+            else
+            {
+                Debug.Log("Inventory is full");
+            }
 
-            Debug.Log($"Adicionado: {item.ItemName}");
+            Debug.Log($"Adding: {item.ItemName}");
             InventoryUI.Instance.AddInventoryUI(item);
         }
 
@@ -37,7 +42,7 @@ namespace NGPlus.Inventory
                     _items.Remove(item);
                 }
 
-                Debug.Log($"Removido: {item.ItemName}");
+                Debug.Log($"Removing: {item.ItemName}");
             }
         }
 

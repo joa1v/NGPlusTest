@@ -56,15 +56,25 @@ namespace NGPlus.Quests
             return false;
         }
 
-        public void ActiveQuest(Quest quest)
+        public bool CheckQuestIsComplete(Quest quest)
         {
             QuestData questData = _activeQuests.Find(q => q.QuestTemplate == quest);
             if (questData != null)
             {
-                questData.IsActive = true;
+                return questData.IsCompleted;
             }
 
-            _displayer.ShowQuest(quest);
+            return false;
+        }
+
+        public void ActiveQuest(Quest quest)
+        {
+            QuestData questData = _activeQuests.Find(q => q.QuestTemplate == quest);
+            if (questData != null && !questData.IsActive)
+            {
+                questData.IsActive = true;
+                _displayer.ShowQuest(quest);
+            }
         }
 
         public void UpdateQuestProgress(Quest quest, int amount)

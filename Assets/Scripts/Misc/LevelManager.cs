@@ -22,6 +22,8 @@ public class LevelManager : MonoBehaviour
         if (!hasQuest)
             QuestManager.Instance.AddQuest(_collectionQuest);
 
+        if (QuestManager.Instance.CheckQuestIsComplete(_collectionQuest))
+            return;
 
         QuestManager.Instance.WatchQuestCompleted(_collectionQuest, SetWin);
         QuestManager.Instance.ActiveQuest(_collectionQuest);

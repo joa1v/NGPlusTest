@@ -10,8 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f26c74b3d027d6f429939e5954b22d5a, type: 3}
-  m_Name: NPC1_DialogueData
+  m_Name: NPCAdvice_DialogueData
   m_EditorClassIdentifier: 
   _dialogueLines:
-  - oi
-  - oi 2
+  - I wouldn't go this way if I were you

@@ -35,6 +35,9 @@ namespace NGPlus.SaveSystem
     {
         private const string SaveKey = "GameData";
 
+        public static Action OnSave { get; set; }
+        public static Action OnLoad { get; set; }
+
         public static void SaveGame()
         {
             GameData data = new GameData();
@@ -52,6 +55,8 @@ namespace NGPlus.SaveSystem
             string json = JsonUtility.ToJson(data);
             PlayerPrefs.SetString(SaveKey, json);
             PlayerPrefs.Save();
+
+            OnSave?.Invoke();
         }
 
         public static void LoadGame()
@@ -87,6 +92,8 @@ namespace NGPlus.SaveSystem
 
                 QuestManager.Instance.AddQuest(quest, questData);
             }
+
+            OnLoad?.Invoke();
         }
     }
 }

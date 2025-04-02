@@ -1,11 +1,11 @@
 using NGPlus.SaveSystem;
-using NGPlus.Singleton;
 using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private LevelManager _levelManager;
+    [SerializeField] private LevelManager _levelManager; //i could use zenject for these 2 lines but i dont think i have enough time
+    [SerializeField] private Timer _timer;
 
     private void Start()
     {
@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     private void StartGame()
     {
         _levelManager.StartLevel();
+        _timer.StartTimer();
     }
 
 }
