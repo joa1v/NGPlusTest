@@ -1,4 +1,5 @@
 using NGPlus.Singleton;
+using System.Linq;
 using UnityEngine;
 
 namespace NGPlus.Inventory
@@ -14,8 +15,8 @@ namespace NGPlus.Inventory
             {
                 if (i < InventoryManager.Instance.Items.Count)
                 {
-                    var item = InventoryManager.Instance.Items[i];
-                    _inventorySlots[i].SetItem(item);
+                    var item = InventoryManager.Instance.Items.ElementAt(i);
+                    _inventorySlots[i].SetItem(item.Key, item.Value);
                 }
                 else
                 {

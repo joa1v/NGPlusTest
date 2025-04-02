@@ -9,6 +9,7 @@ namespace NGPlus.Item
         [SerializeField] private InventoryItem _inventoryItem;
         public override void Interact()
         {
+            base.Interact();
             InventoryManager.Instance.AddItem(_inventoryItem);
             gameObject.SetActive(false);
         }

@@ -11,7 +11,7 @@ namespace NGPlus.Inventory
 
     public enum ItemType
     {
-        Consumable,
-        Quest
+        HealthPotion,
+        Crystal
     }
 }

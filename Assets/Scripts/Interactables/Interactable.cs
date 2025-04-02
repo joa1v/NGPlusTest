@@ -10,6 +10,7 @@ namespace NGPlus.Interactables
         [SerializeField] protected InteractableFeedback _feedback;
 
         public Action OnInteractorLeft { get; set; }
+        public Action OnInteracted { get; set; }
 
         private void OnTriggerEnter(Collider other)
         {
@@ -31,7 +32,10 @@ namespace NGPlus.Interactables
             }
         }
 
-        public abstract void Interact();
+        public virtual void Interact()
+        {
+            OnInteracted?.Invoke();
+        }
 
     }
 }

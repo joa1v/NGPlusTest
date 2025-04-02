@@ -20,6 +20,7 @@ namespace NGPlus.NPCs
 
         public override void Interact()
         {
+            base.Interact();
             _feedback.Hide();
             _dialoguer.StartDialogue();
         }

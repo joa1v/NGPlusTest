@@ -1,0 +1,18 @@
+{
+    "name": "NGPlus.Quests",
+    "rootNamespace": "NGPlus.Quests",
+    "references": [
+        "GUID:7f53ec56def91ee4c99b8865da5d5c71",
+        "GUID:3082e14eb52f6404fb866d07e6244c02",
+        "GUID:a5bbc8ed403b89a4e84d2f84a0e8117e"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 317bac7f6502227478583fd98bc658b8, type: 3}
-  m_Name: Quest Item
+  m_Script: {fileID: 11500000, guid: df84bbca3d99883489f436dec76fcd38, type: 3}
+  m_Name: Crystal Collection Quest
   m_EditorClassIdentifier: 
-  _itemName: 
-  _icon: {fileID: 0}
-  _itemType: 1
-  _questDescription: 
+  _title: Crystal Collection
+  _description: Find the 5 Crystals
+  requiredItem: 1
+  requiredAmount: 5
