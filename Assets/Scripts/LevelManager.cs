@@ -10,7 +10,7 @@ public class LevelManager : MonoBehaviour
     private bool _won;
     private bool _lost;
 
-    private void Start()
+    public void StartLevel()
     {
         _timer.OnEndTimer += SetDefeat;
         AddQuest();
@@ -18,7 +18,11 @@ public class LevelManager : MonoBehaviour
 
     private void AddQuest()
     {
-        QuestManager.Instance.AddQuest(_collectionQuest);
+        bool hasQuest = QuestManager.Instance.CheckHasQuest(_collectionQuest);
+        if (!hasQuest)
+            QuestManager.Instance.AddQuest(_collectionQuest);
+
+
         QuestManager.Instance.WatchQuestCompleted(_collectionQuest, SetWin);
         QuestManager.Instance.ActiveQuest(_collectionQuest);
     }

@@ -3,18 +3,21 @@ using UnityEngine;
 
 namespace NGPlus.Quests
 {
+    [Serializable]
     public class QuestData
     {
         public Quest QuestTemplate { get; private set; }
         public bool IsActive { get; set; }
-        public bool IsCompleted { get; private set; }
-        public int CurrentProgress { get; private set; }
+        public bool IsCompleted { get; set; }
+        public int CurrentProgress { get; set; }
+        public string Id { get; set; }
 
         public Action OnQuestCompleted { get; set; }
 
         public QuestData(Quest questTemplate)
         {
             QuestTemplate = questTemplate;
+            Id = questTemplate.Title;
             IsCompleted = false;
             CurrentProgress = 0;
         }

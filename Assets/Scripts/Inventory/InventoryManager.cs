@@ -38,8 +38,12 @@ namespace NGPlus.Inventory
                 }
 
                 Debug.Log($"Removido: {item.ItemName}");
-                //InventoryUI.Instance.UpdateInventoryUI();
             }
+        }
+
+        public void ClearInventory()
+        {
+            _items.Clear();
         }
     }
 }
