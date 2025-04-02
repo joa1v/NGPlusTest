@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 317bac7f6502227478583fd98bc658b8, type: 3}
   m_Name: PurpleCrystal Item
   m_EditorClassIdentifier: 
-  _itemName: 
+  _itemName: Purple Crystal
+  _description: a purple crystal
   _icon: {fileID: 21300000, guid: 7f29dbe8e0ee64d448e0f08a21996866, type: 3}
   _itemType: 1
-  _questDescription: 

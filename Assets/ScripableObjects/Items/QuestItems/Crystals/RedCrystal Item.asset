@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 317bac7f6502227478583fd98bc658b8, type: 3}
   m_Name: RedCrystal Item
   m_EditorClassIdentifier: 
-  _itemName: 
+  _itemName: Red Crystal
+  _description: a red crystal
   _icon: {fileID: 21300000, guid: a3f2032049582c94a811b99c8d38ac4d, type: 3}
   _itemType: 1
-  _questDescription: 

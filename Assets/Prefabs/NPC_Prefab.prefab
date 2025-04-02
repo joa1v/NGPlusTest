@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1943830340509986729}
   - component: {fileID: 7566420511470064189}
   m_Layer: 0
-  m_Name: NPC
+  m_Name: NPC_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -385,6 +385,10 @@ PrefabInstance:
     - target: {fileID: 9206979878967153575, guid: fe9de64556caa4e4d9e2f27a1937930b, type: 3}
       propertyPath: m_Name
       value: NPCDialogueDisplayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 9206979878967153575, guid: fe9de64556caa4e4d9e2f27a1937930b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

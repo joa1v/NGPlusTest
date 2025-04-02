@@ -6,7 +6,7 @@ namespace NGPlus.Quests
 {
     public class ItemQuestObject : QuestObject
     {
-        [SerializeField] private CollectionQuest _quest;
+        [SerializeField] private Quest _quest;
         [SerializeField] private ItemInteraction _itemInteraction;
         [SerializeField] private ItemType _type;
 
@@ -20,9 +20,12 @@ namespace NGPlus.Quests
             _itemInteraction.OnInteracted -= UpdateQuest;
         }
 
-        private void UpdateQuest()
+        protected override void UpdateQuest()
         {
-            _quest.CollectItem(_type);
+            if (!QuestManager.Instance.CheckQuestIsActive(_quest))
+                return;
+
+            QuestManager.Instance.UpdateQuestProgress(_quest, 1);
         }
     }
 }

@@ -5,35 +5,37 @@ using UnityEngine.UI;
 
 namespace NGPlus.Inventory
 {
-    public class InventorySlotUI : MonoBehaviour, IPointerClickHandler
+    public class InventorySlotUI : MonoBehaviour
     {
-        [SerializeField] private Image _itemIcon;
-        [SerializeField] private TextMeshProUGUI _itemCounter;
-        private IInventoryItem _currentItem;
 
-        public void SetItem(IInventoryItem item, int count)
+        public bool IsAvailable => _currentItem == null;
+
+        private int _itemCount;
+        private InventoryItemUI _currentItem;
+
+        public void AddItem(InventoryItemUI item)
         {
-            _currentItem = item;
-            _itemIcon.color = Color.white;
-            _itemIcon.sprite = item.Icon;
-            _itemCounter.text = count.ToString();
+            if (_currentItem != null)
+            {
+                _currentItem.ItemCount += item.ItemCount;
+                item.ResetItemUI();
+            }
+            else
+            {
+                _currentItem = item;
+                _currentItem.SetSlot(this);
+                item.transform.position = transform.position;
+            }
+        }
+
+        public bool CheckCanAddItem(InventoryItemUI itemToAdd)
+        {
+            return IsAvailable || itemToAdd.Item == _currentItem.Item;
         }
 
         public void SetEmpty()
         {
             _currentItem = null;
-            _itemIcon.color = Color.clear;
-            _itemIcon.sprite = null;
-            _itemCounter.text = string.Empty;
-        }
-
-        public void OnPointerClick(PointerEventData eventData)
-        {
-            if (_currentItem is ConsumableItem consumable)
-            {
-                consumable.Consume();
-                InventoryManager.Instance.RemoveItem(_currentItem);
-            }
         }
     }
 }

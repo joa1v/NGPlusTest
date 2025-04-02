@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: HealthPotion Item
   m_EditorClassIdentifier: 
   _itemName: HealthPotion
+  _description: Heals in 20 points
   _icon: {fileID: 21300000, guid: a6838689af94d84408e40f6054d4df67, type: 3}
   _itemType: 0
+  _healAmount: 20

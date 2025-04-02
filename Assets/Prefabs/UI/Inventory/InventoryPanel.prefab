@@ -102,6 +102,7 @@ MonoBehaviour:
   - {fileID: 1935116419496469872}
   - {fileID: 3461548808673262951}
   - {fileID: 49214250513625703}
+  _inventoryItemUIPrefab: {fileID: 6365224312892844641, guid: c923426f829a2c944a03703ce14d68c3, type: 3}
 --- !u!114 &7665208189245553949
 MonoBehaviour:
   m_ObjectHideFlags: 0

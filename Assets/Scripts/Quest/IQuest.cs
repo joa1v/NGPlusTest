@@ -6,6 +6,5 @@ namespace NGPlus.Quests
         string Title { get; }
         string Description { get; }
         bool IsCompleted { get; }
-        void CheckProgress();
     }
 }

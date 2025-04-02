@@ -21,7 +21,7 @@ namespace NGPlus.Inventory
             }
 
             Debug.Log($"Adicionado: {item.ItemName}");
-            InventoryUI.Instance.UpdateInventoryUI();
+            InventoryUI.Instance.AddInventoryUI(item);
         }
 
         public void RemoveItem(IInventoryItem item)
@@ -38,7 +38,7 @@ namespace NGPlus.Inventory
                 }
 
                 Debug.Log($"Removido: {item.ItemName}");
-                InventoryUI.Instance.UpdateInventoryUI();
+                //InventoryUI.Instance.UpdateInventoryUI();
             }
         }
     }

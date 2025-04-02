@@ -7,14 +7,14 @@ namespace NGPlus.Quests
     {
         [SerializeField] private string _title;
         [SerializeField] private string _description;
+        [SerializeField] private int _requiredAmount;
 
         public string Description => _description;
 
         public string Title => _title;
 
         public bool IsCompleted { get; protected set; }
-
-        public abstract void CheckProgress();
+        public int RequiredAmount => _requiredAmount;
 
     }
 }

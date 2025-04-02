@@ -8,14 +8,15 @@ namespace NGPlus.Interactables
     public abstract class Interactable : MonoBehaviour
     {
         [SerializeField] protected InteractableFeedback _feedback;
-
+        protected Interactor _interactor;
         public Action OnInteractorLeft { get; set; }
         public Action OnInteracted { get; set; }
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.TryGetComponent(out Interactor interactor))
+            if (other.TryGetComponent(out Interactor interactor) && !interactor.CurrentInteractable)
             {
+                _interactor = interactor;
                 interactor.CurrentInteractable = this;
                 _feedback.Show();
             }
@@ -28,7 +29,21 @@ namespace NGPlus.Interactables
                 interactor.CurrentInteractable = null;
                 _feedback.Hide();
 
+                _interactor = null;
                 OnInteractorLeft?.Invoke();
+            }
+        }
+
+        private void OnDisable()
+        {
+            CheckRemoveAsInteractable();
+        }
+
+        private void CheckRemoveAsInteractable()
+        {
+            if (_interactor && _interactor.CurrentInteractable == this)
+            {
+                _interactor.CurrentInteractable = null;
             }
         }
 

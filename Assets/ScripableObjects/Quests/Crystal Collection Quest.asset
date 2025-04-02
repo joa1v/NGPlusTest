@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: Crystal Collection Quest
   m_EditorClassIdentifier: 
   _title: Crystal Collection
-  _description: Find the 5 Crystals
-  requiredItem: 1
-  requiredAmount: 5
+  _description: Find all 5 crystals before time runs out
+  _requiredAmount: 5
