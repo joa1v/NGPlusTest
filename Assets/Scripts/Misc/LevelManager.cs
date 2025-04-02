@@ -1,4 +1,5 @@
 using NGPlus.Quests;
+using System;
 using UnityEngine;
 
 public class LevelManager : MonoBehaviour
@@ -6,9 +7,11 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Timer _timer;
     [SerializeField] private Quest _collectionQuest;
 
-    [SerializeField] private float _delayToSetWinDefeat;
     private bool _won;
     private bool _lost;
+
+    public Action OnLevelWin { get; set; }
+    public Action OnLevelDefeat { get; set; }
 
     public void StartLevel()
     {
@@ -23,27 +26,34 @@ public class LevelManager : MonoBehaviour
             QuestManager.Instance.AddQuest(_collectionQuest);
 
         if (QuestManager.Instance.CheckQuestIsComplete(_collectionQuest))
+        {
+            _won = true;
             return;
+        }
 
         QuestManager.Instance.WatchQuestCompleted(_collectionQuest, SetWin);
         QuestManager.Instance.ActiveQuest(_collectionQuest);
     }
 
+    [ContextMenu("WIN")]
     public void SetWin()
     {
         if (_lost || _won)
             return;
 
         _won = true;
-        Debug.Log("GANHOU");
+        OnLevelWin?.Invoke();
+        Time.timeScale = 0;
     }
 
+    [ContextMenu("DEFEAT")]
     public void SetDefeat()
     {
         if (_lost || _won)
             return;
 
         _lost = true;
-        Debug.Log("PERDEU");
+        OnLevelDefeat?.Invoke();
+        Time.timeScale = 0;
     }
 }

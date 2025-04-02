@@ -7,7 +7,7 @@ public class Timer : MonoBehaviour, ISaveable
     [SerializeField, Tooltip("Seconds")] private float _timer;
     private bool _updateTimer;
     private float _currentTimer;
-
+    private float _startTimer;
     public bool UpdateTimer { get => _updateTimer; set => _updateTimer = value; }
     public float CurretTime => _currentTimer;
     public Action OnEndTimer { get; set; }
@@ -22,7 +22,7 @@ public class Timer : MonoBehaviour, ISaveable
     {
         Load();
         _updateTimer = true;
-        _currentTimer = _timer;
+        _currentTimer = _startTimer;
     }
 
     private void Update()
@@ -46,7 +46,7 @@ public class Timer : MonoBehaviour, ISaveable
 
     public void Load()
     {
-        _timer = PlayerPrefs.GetFloat(Key, _timer);
+        _startTimer = PlayerPrefs.GetFloat(Key, _timer);
     }
 
     public void SubscribeToSaveManager()
